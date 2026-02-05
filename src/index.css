@@ -1,0 +1,197 @@
+/*
+ * Tailwind CSS Configuration
+ * Suppress CSS linter warnings for Tailwind-specific at-rules
+ */
+/* stylelint-disable at-rule-no-unknown */
+/* postcss-bem-linter: ignore */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    font-size: 93.75%;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* Global Design System Variables */
+    --ast-post-nav-space: 0;
+    --ast-container-default-xlg-padding: 6.67em;
+    --ast-container-default-lg-padding: 5.67em;
+    --ast-container-default-slg-padding: 4.34em;
+    --ast-container-default-md-padding: 3.34em;
+    --ast-container-default-sm-padding: 6.67em;
+    --ast-container-default-xs-padding: 2.4em;
+    --ast-container-default-xxs-padding: 1.4em;
+    --ast-code-block-background: #EEEEEE;
+    --ast-comment-inputs-background: #FAFAFA;
+    --ast-normal-container-width: 1200px;
+    --ast-narrow-container-width: 750px;
+    --ast-blog-title-font-weight: normal;
+    --ast-blog-meta-weight: inherit;
+    --ast-bg-style-guide: #F8FAFC;
+    --ast-shadow-style-guide: 0px 0px 4px 0 #00000057;
+    --ast-global-dark-bg-style: #fff;
+    --ast-global-dark-lfs: #fbfbfb;
+    --ast-widget-bg-color: #fafafa;
+    --ast-wc-container-head-bg-color: #fbfbfb;
+    --ast-title-layout-bg: #eeeeee;
+    --ast-search-border-color: #e7e7e7;
+    --ast-lifter-hover-bg: #e6e6e6;
+    --ast-gallery-block-color: #000;
+
+    /* Global Colors */
+    --ast-global-color-0: #ffc46b;
+    --ast-global-color-1: #ffac2f;
+    --ast-global-color-2: #000000;
+    --ast-global-color-3: #30333a;
+    --ast-global-color-4: #f8f8f8;
+    --ast-global-color-5: #FFFFFF;
+    --ast-global-color-6: #F2F5F7;
+    --ast-global-color-7: #424242;
+    --ast-global-color-8: #000000;
+    --ast-border-color: #dddddd;
+
+    --ast-global-color-primary: var(--ast-global-color-5);
+    --ast-global-color-secondary: var(--ast-global-color-4);
+    --ast-global-color-alternate-background: var(--ast-global-color-7);
+    --ast-global-color-subtle-background: var(--ast-global-color-6);
+
+    --srfm-color-input-label: var(--ast-global-color-2);
+    --wp--custom--ast-default-block-top-padding: 3em;
+    --wp--custom--ast-default-block-right-padding: 3em;
+    --wp--custom--ast-default-block-bottom-padding: 3em;
+    --wp--custom--ast-default-block-left-padding: 3em;
+    --wp--custom--ast-container-width: 1200px;
+    --wp--custom--ast-content-width-size: 1200px;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-brand-light text-foreground;
+    font-family: 'Sora', sans-serif;
+    /* Applied globally */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Noto Serif', serif;
+    /* Headers use serif */
+  }
+}
+
+.font-serif {
+  font-family: 'Noto Serif', serif !important;
+}
+
+.font-sans {
+  font-family: 'Sora', sans-serif !important;
+}
+
+/* Custom Utilities for Premium Feel */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+    /* Fallback for older browsers */
+    -webkit-text-wrap: balance;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* stylelint-enable at-rule-no-unknown */
